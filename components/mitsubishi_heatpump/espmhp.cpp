@@ -601,6 +601,8 @@ void MitsubishiHeatPump::hpStatusChanged(heatpumpStatus currentStatus) {
 
     this->operating_ = currentStatus.operating;
 
+    ESP_LOGI(TAG, "Compressor freq: %i", currentStatus.compressorFrequency);
+
     this->publish_state();
 }
 
